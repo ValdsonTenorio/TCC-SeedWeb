@@ -1,0 +1,35 @@
+# Empty CSS file for your own CSS
+
+a{
+	color: #5AAC56 !important;
+}
+
+.body-background{
+	background-color: #338a2e;
+}
+
+.container-fluid-resized{
+	width: 80%;
+}
+
+.menu-margin{
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+.pagination-style{
+	text-align: center !important; 
+}
+
+.banner{
+	margin-bottom: 2%;
+}
+
+.nav-pills>li.active>a{
+	background-color: #034500;
+}
+
+.nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
+	background-color: #156711;
+}
+
