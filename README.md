@@ -38,6 +38,9 @@ As seguintes dependências foram incluidas no projeto:
 ```bash
     composer install
 ```
+**2.3.** Criar Link simbólico para o storage
+
+php artisan storage:link
 
 **2.4.** Faça uma cópia do arquivo `.env.example` e renomeie para `.env`:
 

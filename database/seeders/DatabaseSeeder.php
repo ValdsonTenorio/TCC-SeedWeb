@@ -13,8 +13,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(VoyagerDatabaseSeeder::class);
-        //$this->call(VoyagerDummyDatabaseSeeder::class);
+       // $this->call(VoyagerDatabaseSeeder::class);
+        $this->call(VoyagerDummyDatabaseSeeder::class);
         // \App\Models\User::factory(10)->create();
     }
 }
