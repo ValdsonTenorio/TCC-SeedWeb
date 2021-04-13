@@ -16,11 +16,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-       // $this->call(VoyagerDatabaseSeeder::class);
-        //$this->call(VoyagerDummyDatabaseSeeder::class);
         // \App\Models\User::factory(10)->create();
+
+		//arquivos gerados pelo voyager install
         $this->seedersPath = database_path('seeds').'/';
         $this->seed('VoyagerDatabaseSeeder');
         $this->seed('VoyagerDummyDatabaseSeeder');
+
+        //arquivos gerados pelo seeder de BREADS
+        $this->seedersPath = database_path('seeds').'/breads'.'/';
+        $this->seed('VoyagerDeploymentOrchestratorSeeder');
     }
 }
