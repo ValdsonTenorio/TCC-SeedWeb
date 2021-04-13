@@ -1,5 +1,5 @@
 <?php
-namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Models\Category;
 use TCG\Voyager\Models\DataType;
