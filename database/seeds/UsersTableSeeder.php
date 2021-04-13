@@ -23,6 +23,7 @@ class UsersTableSeeder extends Seeder
                 'password'       => bcrypt('password'),
                 'remember_token' => Str::random(60),
                 'role_id'        => $role->id,
+                'locale'         => 'pt_br',
             ]);
         }
     }
