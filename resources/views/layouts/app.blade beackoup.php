@@ -9,26 +9,22 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    @yield('head')
-
 </head>
-<body class="body-background" style="background-color: #759D00">
-
-    <div class="container-fluid" style="width: 90%; background-color:white; margin-top: 1%; margin-bottom: 1%; border-radius: 10px;">
-
-
-
+<body>
+    <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container-fluid justify-content-between">
+            <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img alt="logo do ifms" src="{{ asset('images/logoif.png')}}" class="img-rounded">
-
+                    {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -37,9 +33,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <a class="navbar-brand" href="{{ url('/') }}">
-                            <img alt="logo do site" src="{{ asset('images/logo.png')}}" class="img-rounded">
-                        </a>
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -51,7 +45,7 @@
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
-
+                            
                             @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
@@ -81,12 +75,9 @@
             </div>
         </nav>
 
-  @yield('content')
-  <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    @yield('javascript')
-</div>
+        <main class="py-4">
+            @yield('content')
+        </main>
+    </div>
 </body>
 </html>

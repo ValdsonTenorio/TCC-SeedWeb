@@ -1,32 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-    <title> SeedWeb</title>
+@section('content')
 
-    <meta name="description" content="Source code generated using layoutit.com">
-    <meta name="author" content="LayoutIt!">
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
-  </head>
-  <body class="body-background" style="background-color: #759D00">
-
-    <div class="container-fluid" style="width: 90%; background-color:white; margin-top: 1%; margin-bottom: 1%; border-radius: 10px;">
-
-	<div class="row banner" >
-		<div class="col-md-3" style="padding-top: 60px; padding-left: 40px">
-			<img alt="Bootstrap Image Preview" src="images/logoif.png" class="img-rounded">
-		</div>
-		<div class="col-md-9">
-				<img src="images/logo.png">
-		</div>
-	</div>
 
 	<div class="row" style="height: 20px; background-color: green">
 	</div>
@@ -83,10 +59,4 @@
 	    </div>
 	  </div>
 	@endforeach
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/scripts.js"></script>
-
-
-  </body>
-</html>
+    @endsection
