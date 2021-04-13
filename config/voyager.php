@@ -42,7 +42,7 @@ return [
     */
 
     'models' => [
-        //'namespace' => 'App\\',
+        'namespace' => 'App\\Models\\',
     ],
 
     /*
@@ -99,19 +99,20 @@ return [
         /*
          * Set whether or not the multilingual is supported by the BREAD input.
          */
-        'enabled' => false,
+        'enabled' => true,
 
         /*
          * Select default language
          */
-        'default' => 'en',
+        'default' => 'pt',
 
         /*
          * Select languages that are supported.
          */
         'locales' => [
+            'pt',
             'en',
-            //'pt',
+            'es',
         ],
     ],
 
@@ -183,7 +184,7 @@ return [
     |
     */
 
-    'primary_color' => '#22A7F0',
+    'primary_color' => '#32A041',
 
     'show_dev_tips' => true, // Show development tip "How To Use:" in Menu and Settings
 
