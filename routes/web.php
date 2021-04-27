@@ -25,7 +25,8 @@ Route::group(['prefix' => 'admin'], function () {
 
 //Auth::routes();
 
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::middleware(['auth', 'verified'])->group(function () {
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+/*Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('home', 'home')->name('home');
 });
+*/
