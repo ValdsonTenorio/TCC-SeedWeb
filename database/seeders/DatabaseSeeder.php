@@ -26,5 +26,7 @@ class DatabaseSeeder extends Seeder
         //arquivos gerados pelo seeder de BREADS
         $this->seedersPath = database_path('seeds').'/breads'.'/';
         $this->seed('VoyagerDeploymentOrchestratorSeeder');
+        $this->seedersPath = database_path('seeds').'/';
+        $this->seed('SementePermissionRoleTableSeeder');
     }
 }

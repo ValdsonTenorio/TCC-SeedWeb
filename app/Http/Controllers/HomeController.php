@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Semente;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -26,4 +27,11 @@ class HomeController extends Controller
         return redirect()->route('voyager.dashboard');
         //return view('home');
     }
+    public function sementes()
+    {
+        $sementes = Semente::all();
+        return view('home', compact('sementes'));
+    }
 }
+
+

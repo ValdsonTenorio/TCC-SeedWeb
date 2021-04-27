@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
        // $this->call(VoyagerDatabaseSeeder::class);
         $this->call(VoyagerDummyDatabaseSeeder::class);
         // \App\Models\User::factory(10)->create();
+
     }
 }
