@@ -27,7 +27,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/semente', [App\Http\Controllers\HomeController::class, 'sementes'])->name('semente');
+Route::get('/sementes', [App\Http\Controllers\HomeController::class, 'sementes'])->name('sementes');
 /*Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('home', 'home')->name('home');
 });*/

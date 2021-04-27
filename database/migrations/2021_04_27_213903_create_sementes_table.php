@@ -22,7 +22,7 @@ class CreateSementesTable extends Migration
             $table->text('genero')->nullable();
             $table->text('quebra_de_dormencia')->nullable();
             $table->string('imagem')->nullable();
-            $table->integer('descricao')->nullable();
+            $table->text('descricao')->nullable();
         });
     }
 
