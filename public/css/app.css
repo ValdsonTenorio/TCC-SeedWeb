@@ -1,4 +1,16 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
+
+ .menu{
+    width: 90%;
+    background-color:white;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border-radius: 10px;}
+
+.background {
+    background-color: #759D00;
+}
+
 @charset "UTF-8";
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)

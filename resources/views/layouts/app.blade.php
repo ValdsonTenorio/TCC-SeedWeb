@@ -18,9 +18,9 @@
     @yield('head')
 
 </head>
-<body class="body-background" style="background-color: #759D00">
+<body class="background">
 
-    <div class="container-fluid" style="width: 90%; background-color:white; margin-top: 1%; margin-bottom: 1%; border-radius: 10px;">
+    <div class="container-fluid menu">
 
 
 
