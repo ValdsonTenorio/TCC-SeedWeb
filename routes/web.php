@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $posts = App\Models\Post::paginate(4);
-    return view('welcome', compact('posts'));
+    $sementes = App\Models\Semente::paginate(4);
+    return view('welcome', compact('sementes'));
 });
 
 
