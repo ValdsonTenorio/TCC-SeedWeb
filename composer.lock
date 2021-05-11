@@ -7,6 +7,7 @@
 
     "content-hash": "acec5f1f6f644bad166ddf7514926837",
 
+
     "packages": [
         {
             "name": "arrilot/laravel-widgets",
@@ -7240,6 +7241,7 @@
             "time": "2020-11-01T13:51:21+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "laravel/sail",
             "version": "v1.5.0",
             "source": {
@@ -7300,6 +7302,8 @@
             "time": "2021-04-20T16:17:55+00:00"
         },
         {
+=======
+>>>>>>> parent of 91a1277 (Adicionar dependencia: laravel-pt-br-localization)
             "name": "mockery/mockery",
             "version": "1.4.3",
             "source": {
