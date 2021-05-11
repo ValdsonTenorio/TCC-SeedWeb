@@ -4,22 +4,22 @@
 
 
 
-	<div class="row" style="height: 20px; background-color: green">
+	<div class="row" style="height: 20px; background-color: rgb(248, 255, 248)">
 	</div>
 
 
-	@foreach($posts as $key => $post)
+	@foreach($sementes as $key => $semente)
         @if (($key) % 2 == 0 || $key == 0)
         <div class="row" style="margin-top: 3%">
         @endif
         <div class="col-md-6">
             <div class="media">
-                 <a href="#" class="pull-left"><img style="width: 200px; height: 200px" alt="Bootstrap Media Preview" src="{{ Voyager::image( $post->image ) }}" class="img-circle media-object" data-toggle="modal" data-target="#{{ $post->slug }}"></a>
+                 <a href="#" class="pull-left"><img style="width: 200px; height: 200px" alt="Bootstrap Media Preview" src="{{ Voyager::image( $semente->image ) }}" class="img-circle media-object" data-toggle="modal" data-target="#{{ $semente->id }}"></a>
                 <div class="media-body">
                     <h4 class="media-heading" style="margin-top: 21%;font-style: 30%">
-                        {{ $post->title }}
+                        {{ $semente->nome_popular }}
                     </h4>
-						 {!! $post->excerpt !!}
+						 {!! $semente->nome_cientifico !!}
                 </div>
             </div>
         </div>
@@ -31,7 +31,7 @@
 	<div class="pagination-style">
 	<div class="row" style="margin-top: 2%">
 		<div class="col-md-12">
-			<?php echo $posts->render(); ?>
+			<?php echo $sementes->render(); ?>
 		</div>
 	</div>
 	</div>
@@ -41,16 +41,16 @@
 		</div>
 	</div>
 </div>
-	@foreach($posts as $key => $post)
-	  <div class="modal fade" id="{{ $post->slug }}" role="dialog">
+	@foreach($sementes as $key => $semente)
+	  <div class="modal fade" id="{{ $semente->id }}" role="dialog">
 	    <div class="modal-dialog modal-lg">
 	      <div class="modal-content">
 	        <div class="modal-header">
 	          <button type="button" class="close" data-dismiss="modal">&times;</button>
-	          <h4 class="modal-title">{{ $post->title }}</h4>
+	          <h4 class="modal-title">{{ $semente->nome_popular }}</h4>
 	        </div>
 	        <div class="modal-body">
-	          <p>{!! $post->body !!}</p>
+	          <p>{!! $semente->nome_cientifico!!}</p>
 	        </div>
 	        <div class="modal-footer">
 	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
