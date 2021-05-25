@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SementeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,8 +27,8 @@ Route::group(['prefix' => 'admin'], function () {
 //Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::get('/sementes', [App\Http\Controllers\HomeController::class, 'sementes'])->name('sementes');
+Route::get('/semente', [SementeController::class, 'index']);
 /*Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('home', 'home')->name('home');
 });*/

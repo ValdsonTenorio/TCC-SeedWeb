@@ -14,7 +14,7 @@
         @endif
         <div class="col-md-6">
             <div class="media">
-                 <a href="#" class="pull-left"><img style="width: 200px; height: 200px" alt="Bootstrap Media Preview" src="{{ Voyager::image( $semente->image ) }}" class="img-circle media-object" data-toggle="modal" data-target="#{{ $semente->id }}"></a>
+                 <a href="#" class="pull-left"><img style="width: 200px; height: 200px" alt="Bootstrap Media Preview" src="{{ Voyager::image( $semente->imagem ) }}" class="img-circle media-object" data-toggle="modal" data-target="#{{ $semente->id }}"></a>
                 <div class="media-body">
                     <h4 class="media-heading" style="margin-top: 21%;font-style: 30%">
                         {{ $semente->nome_popular }}
