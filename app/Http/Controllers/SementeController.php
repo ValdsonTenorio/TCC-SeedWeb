@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Semente;
+use Illuminate\Support\Facades\Auth;
 class SementeController extends Controller
 {
     /**
@@ -24,7 +25,10 @@ class SementeController extends Controller
      */
     public function create()
     {
-        //
+       if (Auth::check() === true) {
+            $user = Auth()->User();
+            return view('semente.create', compact('user'));
+        }
     }
 
     /**
@@ -35,7 +39,7 @@ class SementeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
     }
 
     /**
