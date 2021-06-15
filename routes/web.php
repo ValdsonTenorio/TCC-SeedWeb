@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SementeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,6 +34,7 @@ Route::get('/semente/{id}', [App\Http\Controllers\SementeController::class, 'sho
 
 
 Route::get('/sementes', [App\Http\Controllers\HomeController::class, 'sementes'])->name('sementes');
+Route::get('/semente', [SementeController::class, 'index']);
 /*Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('home', 'home')->name('home');
 });*/
