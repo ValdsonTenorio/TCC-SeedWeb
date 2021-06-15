@@ -26,6 +26,7 @@ Route::group(['prefix' => 'admin'], function () {
 //Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/semente', [App\Http\Controllers\SementeController::class, 'index'])->name('semente.index');
 Route::get('/semente/create', [App\Http\Controllers\SementeController::class, 'create'])->name('semente.create');
 Route::post('/semente/store', [App\Http\Controllers\SementeController::class, 'store'])->name('semente.store');
 Route::get('/semente/{id}', [App\Http\Controllers\SementeController::class, 'show'])->name('semente');

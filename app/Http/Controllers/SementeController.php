@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use  Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Models\Semente;
 use Illuminate\Support\Facades\Auth;
@@ -14,8 +15,8 @@ class SementeController extends Controller
      */
     public function index()
     {
-        $sementes = App\Models\Semente::paginate(4);
-        return view('home', compact('sementes'));
+        $sementes = Semente::paginate(4);
+        return view('semente.index', compact('sementes'));
     }
 
     /**
@@ -39,7 +40,20 @@ class SementeController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+
+        if (Auth::check() === true and Auth::user()->can('add', new Semente)) {
+            $semente = new Semente();
+            $semente->nome_popular = $request->nome_popular;
+            $semente->nome_cientifico = $request->nome_cientifico;
+            $semente->especie = $request->especie;
+            $semente->genero = $request->genero;
+            $semente->quebra_de_dormencia = $request->quebra_de_dormencia;
+           $semente->save();
+            return redirect()->route('semente.index');
+        } else {
+            $request->session()->flash('mensagem', 'Você não possui permissão para isso');
+            return redirect()->route('semente.index');
+        }
     }
 
     /**
