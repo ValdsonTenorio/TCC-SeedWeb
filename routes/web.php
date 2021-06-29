@@ -31,7 +31,7 @@ Route::get('/semente', [App\Http\Controllers\SementeController::class, 'index'])
 Route::get('/semente/create', [App\Http\Controllers\SementeController::class, 'create'])->name('semente.create');
 Route::post('/semente/store', [App\Http\Controllers\SementeController::class, 'store'])->name('semente.store');
 Route::get('/semente/{id}', [App\Http\Controllers\SementeController::class, 'show'])->name('semente');
-
+Route::get('/semente/edit', [App\Http\Controllers\EditController::class, 'show'])->name('semente');
 
 Route::get('/sementes', [App\Http\Controllers\HomeController::class, 'sementes'])->name('sementes');
 Route::get('/semente', [SementeController::class, 'index']);

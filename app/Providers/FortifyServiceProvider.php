@@ -35,18 +35,19 @@ class FortifyServiceProvider extends ServiceProvider
     public function boot()
     {
         Fortify::loginView(function () {
-            return redirect()->route('voyager.login');
-            //return view('auth.login');
+            //return redirect()->route('voyager.login');
+            return view('auth.login');
         });
-        /*/
+        
         Fortify::authenticateUsing(function (Request $request) {
             $user = User::where('email', $request->email)->first();
-
+            //dd($user,'teste');
             if ($user &&
                 Hash::check($request->password, $user->password)) {
-                return $user;
+            
+                    return $user;
             }
-        });//*/
+        });
 
         Fortify::registerView(function () {
             return view('auth.register');

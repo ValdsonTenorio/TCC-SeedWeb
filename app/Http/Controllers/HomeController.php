@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Semente;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -24,8 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return redirect()->route('voyager.dashboard');
-        //return view('home');
+        $user = Auth::user();
+        if($user->role_id == 1){
+            return redirect()->route('voyager.dashboard');
+        }
+        return view('pesquisadores.home');
     }
     public function sementes()
     {
