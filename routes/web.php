@@ -30,11 +30,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/semente', [App\Http\Controllers\SementeController::class, 'index'])->name('semente.index');
 Route::get('/semente/create', [App\Http\Controllers\SementeController::class, 'create'])->name('semente.create');
 Route::post('/semente/store', [App\Http\Controllers\SementeController::class, 'store'])->name('semente.store');
-Route::get('/semente/{id}', [App\Http\Controllers\SementeController::class, 'show'])->name('semente');
-Route::get('/semente/edit', [App\Http\Controllers\EditController::class, 'show'])->name('semente');
+Route::get('/semente/{id}', [App\Http\Controllers\SementeController::class, 'show'])->name('semente.show');
+Route::get('/semente/edit/{id}', [App\Http\Controllers\SementeController::class, 'edit'])->name('semente.edit');
+Route::put('/semente/{id}', [App\Http\Controllers\SementeController::class, 'update'])->name('semente.update');
 
 Route::get('/sementes', [App\Http\Controllers\HomeController::class, 'sementes'])->name('sementes');
-Route::get('/semente', [SementeController::class, 'index']);
+
 /*Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('home', 'home')->name('home');
 });*/

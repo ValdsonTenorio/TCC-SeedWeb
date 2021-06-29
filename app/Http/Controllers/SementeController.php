@@ -76,7 +76,8 @@ class SementeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $semente = Semente::where('id', $id)->first();
+        return view('semente.edit', compact('semente'));
     }
 
     /**
@@ -88,7 +89,23 @@ class SementeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        if (Auth::check() === true and Auth::user()->can('edit', new Semente)) {
+            $user = Auth()->User();
+            $semente = Semente::where('id', $id)->first();
+            if (!$semente)
+                return redirect()->back();
+            $semente->nome_popular = $request->nome_popular;
+            $semente->nome_cientifico = $request->nome_cientifico;
+            $semente->especie = $request->especie;
+            $semente->genero = $request->genero;
+            $semente->quebra_de_dormencia = $request->quebra_de_dormencia;
+            $semente->save();
+            return redirect()->route('semente.index');
+        } else {
+        $request->session()->flash('mensagem', 'Você não possui permissão para isso');
+        return redirect()->route('semente.index');
+        }
     }
 
     /**
