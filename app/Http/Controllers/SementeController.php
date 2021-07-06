@@ -99,6 +99,9 @@ class SementeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if (Auth::check() === true) {
+            $semente = Semente::where('id', $id)->first();
+            $semente->delete();
+        }
     }
 }
