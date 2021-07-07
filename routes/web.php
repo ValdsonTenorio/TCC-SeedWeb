@@ -30,9 +30,16 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/semente', [App\Http\Controllers\SementeController::class, 'index'])->name('semente.index');
 Route::get('/semente/create', [App\Http\Controllers\SementeController::class, 'create'])->name('semente.create');
 Route::post('/semente/store', [App\Http\Controllers\SementeController::class, 'store'])->name('semente.store');
+<<<<<<< HEAD
 Route::get('/semente/{id}', [App\Http\Controllers\SementeController::class, 'show'])->name('semente.show');
 Route::get('/semente/edit/{id}', [App\Http\Controllers\SementeController::class, 'edit'])->name('semente.edit');
 Route::put('/semente/{id}', [App\Http\Controllers\SementeController::class, 'update'])->name('semente.update');
+=======
+Route::get('/semente/{id}', [App\Http\Controllers\SementeController::class, 'show'])->name('semente');
+Route::get('/semente/edit', [App\Http\Controllers\EditController::class, 'show'])->name('semente');
+Route::delete('/semente/{id}', [App\Http\Controllers\SementeController::class, 'destroy'])->name('semente.destroy');
+
+>>>>>>> 6707325324314467e3c852eebabfe4fff902eb83
 
 Route::get('/sementes', [App\Http\Controllers\HomeController::class, 'sementes'])->name('sementes');
 
