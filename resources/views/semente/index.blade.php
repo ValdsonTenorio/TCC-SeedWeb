@@ -18,7 +18,7 @@
         <div class="row" style="margin-top: 3%">
         @endif
         <div class="col-md-6">
-            <div class="media">
+            <div class="media" onclick="mostrarmodal({{$semente->id}})">
                  <a href="#" class="pull-left"><img style="width: 200px; height: 200px" alt="Bootstrap Media Preview" src="{{ Voyager::image( $semente->imagem ) }}" class="img-circle media-object" data-toggle="modal" data-target="#{{ $semente->id }}"></a>
                 <div class="media-body">
                     <h4 class="media-heading" style="margin-top: 21%;font-style: 30%">
@@ -47,22 +47,17 @@
 	</div>
 </div>
 	@foreach($sementes as $key => $semente)
-	  <div class="modal fade" id="{{ $semente->id }}" role="dialog">
-	    <div class="modal-dialog modal-lg">
-	      <div class="modal-content">
-	        <div class="modal-header">
-	          <button type="button" class="close" data-dismiss="modal">&times;</button>
-	          <h4 class="modal-title">{{ $semente->nome_popular }}</h4>
-	        </div>
-	        <div class="modal-body">
-	          <p>{!! $semente->nome_cientifico!!}</p>
-	        </div>
-	        <div class="modal-footer">
-	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        </div>
-	      </div>
-	    </div>
-    </div>
-	  </div>
+	@include('semente.components.modal-visualizar')
 	@endforeach
+
+
     @endsection
+
+	@section('javascript')
+	<script>
+	 function mostrarmodal(id){
+		 console.log(id);
+		 $('#modal-'+id).modal('show');
+	 }
+	</script>
+	@endsection

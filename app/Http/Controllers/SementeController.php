@@ -119,6 +119,7 @@ class SementeController extends Controller
         if (Auth::check() === true) {
             $semente = Semente::where('id', $id)->first();
             $semente->delete();
+            return redirect()->route('semente.index');
         }
     }
 }
