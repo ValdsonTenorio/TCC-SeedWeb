@@ -12,16 +12,18 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        
+
         @can('edit', $semente)
             <a href="{{route('semente.edit', $semente->id)}}" type="button" class="btn btn-primary">editar</a>
+
         @endcan
+        @can('delete', $semente)
         <form action="{{route('semente.destroy', $semente->id)}}" method="post">
          @csrf
         <input name="_method" type="hidden" value="DELETE">
         <button type="submit" class="btn btn-danger">Remover</button>
         </form>
-        
+        @endcan
       </div>
     </div>
   </div>
