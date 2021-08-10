@@ -21,6 +21,7 @@
         <input name="_method" type="hidden" value="DELETE">
         <button type="submit" class="btn btn-danger">Remover</button>
         </form>
+        
       </div>
     </div>
   </div>

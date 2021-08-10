@@ -29,3 +29,20 @@
   </form>
 
 @endsection
+@section('head')
+    <style>
+      form{
+        background-color: white;
+        padding: 50px;
+        margin-top: 50px;
+        border-radius: 10px;
+        
+      }
+      form .form-group{
+        color:black;
+        text-align: justify;
+        font-size: 16px;
+        
+      }
+    </style>
+@endsection
