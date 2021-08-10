@@ -1,6 +1,16 @@
 @extends('layouts.app')
 
+
+
 @section('content')
+
+@if ($errors->any())
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li> {{$error}}</li>
+        @endforeach
+    </ul>
+@endif
 
 <form action="{{route('semente.store')}}" method="post">
     @csrf
@@ -26,6 +36,14 @@
         <input type="text" name="quebra_dormencia" class="form-control" id="exampleInputPassword1" placeholder="Quebra Dormência">
       </div>
     <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>
+  <iframe id="form_target" name="form_target" style="display:none"></iframe>
+  <form id="my_form" action="{{ route('voyager.upload') }}" target="form_target" method="post"
+          enctype="multipart/form-data">
+      <input name="image" id="upload_file" type="file"
+               onchange="$('#my_form').submit();this.value='';">
+      <input type="hidden" name="type_slug" id="type_slug" value="{{ $semente->image }}">
+      {{ csrf_field() }}
   </form>
 
 @endsection

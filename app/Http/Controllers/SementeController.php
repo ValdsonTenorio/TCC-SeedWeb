@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUpdateSemente;
 use  Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Models\Semente;
@@ -28,7 +29,8 @@ class SementeController extends Controller
     {
        if (Auth::check() === true) {
             $user = Auth()->User();
-            return view('semente.create', compact('user'));
+            $semente = new Semente();
+            return view('semente.create', compact('user', 'semente'));
         }
     }
 
@@ -38,7 +40,7 @@ class SementeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreUpdateSemente $request)
     {
 
         if (Auth::check() === true and Auth::user()->can('add', new Semente)) {
@@ -54,6 +56,7 @@ class SementeController extends Controller
             $request->session()->flash('mensagem', 'Você não possui permissão para isso');
             return redirect()->route('semente.index');
         }
+        Semente::create($request->all());
     }
 
     /**
@@ -89,7 +92,7 @@ class SementeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
         if (Auth::check() === true and Auth::user()->can('edit', new Semente)) {
             $user = Auth()->User();
             $semente = Semente::where('id', $id)->first();
