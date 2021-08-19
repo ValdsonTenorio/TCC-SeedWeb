@@ -11,10 +11,10 @@
       <p>{!! $semente->nome_cientifico!!}</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
 
         @can('edit', $semente)
-            <a href="{{route('semente.edit', $semente->id)}}" type="button" class="btn btn-primary">editar</a>
+            <a href="{{route('semente.edit', $semente->id)}}" type="button" class="btn btn-primary">Editar</a>
 
         @endcan
         @can('delete', $semente)
