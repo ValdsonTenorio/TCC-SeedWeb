@@ -4,60 +4,51 @@
 
 @if(Session::has('mensagem'))
 <div class="alert alert-danger" role="alert">
-    {{ Session::get('mensagem') }}
-  </div>
-  @endif
-	<div class="row" style=" background-color: rgb(248, 255, 248)">
-
-
-
-
-
-	@foreach($sementes as $key => $semente)
-        @if (($key) % 2 == 0 || $key == 0)
-        <div class="row" style="margin-top: 3%">
-        @endif
-        <div class="col-md-6">
-            <div class="media" onclick="mostrarmodal({{$semente->id}})">
-                 <a href="#" class="pull-left"><img style="width: 200px; height: 200px" alt="Bootstrap Media Preview" src="{{ Voyager::image( $semente->imagem ) }}" class="img-circle media-object" data-toggle="modal" data-target="#{{ $semente->id }}"></a>
-                <div class="media-body">
-                    <h4 class="media-heading" style="margin-top: 21%;font-style: 30%">
-                        {{ $semente->nome_popular }}
-                    </h4>
-						 {!! $semente->nome_cientifico !!}
-                </div>
-            </div>
-        </div>
-        @if (($key + 1) % 2 == 0)
-        </div>
-        @endif
-    @endforeach
-
-	<div class="pagination-style">
-	<div class="row" style="margin-top: 2%">
-		<div class="col-md-12">
-			<?php echo $sementes->render(); ?>
-		</div>
-	</div>
-	</div>
-
-	<div class="row">
-		<div class="col-md-12">
-		</div>
-	</div>
+	{{ Session::get('mensagem') }}
 </div>
+@endif
+<div class="container-fluid bg-light px-4 mt-3">
+	<a href="{{ route('semente.create') }}" class="mt-3 btn btn-primary">Cadastrar Semente</a>
+	<hr>
+
+	<!-- Three columns of text below the carousel -->
 	@foreach($sementes as $key => $semente)
-	@include('semente.components.modal-visualizar')
+	@if (($key) % 4 == 0 || $key == 0)
+	<div class="row w-100">
+		@endif
+		<div class="col-12 col-md text-center">
+			<img class="bd-placeholder-img rounded-circle" width="140" height="140" src="{{ Voyager::image( $semente->imagem ) }}">	
+
+			<h2>{{ $semente->nome_popular }}</h2>
+			<p>{!! $semente->nome_cientifico !!}</p>
+			<p><a class="btn btn-primary" href="#" data-toggle="modal" data-target="#{{ $semente->id }}" onclick="mostrarmodal({{$semente->id}})">Mais Detalhes »</a></p>
+		</div><!-- /.col-lg-4 -->
+		@if (($key + 1) % 4 == 0)
+	</div>
+	@endif
 	@endforeach
+	<div class="row">
+	<div class="pagination-style">
+		
+			<div class="col-md-12">
+				<?php echo $sementes->render(); ?>
+			</div>
+		</div>
+	</div>
+
+</div>
+@foreach($sementes as $key => $semente)
+@include('semente.components.modal-visualizar')
+@endforeach
 
 
-    @endsection
+@endsection
 
-	@section('javascript')
-	<script>
-	 function mostrarmodal(id){
-		 console.log(id);
-		 $('#modal-'+id).modal('show');
-	 }
-	</script>
-	@endsection
+@section('javascript')
+<script>
+	function mostrarmodal(id) {
+		console.log(id);
+		$('#modal-' + id).modal('show');
+	}
+</script>
+@endsection

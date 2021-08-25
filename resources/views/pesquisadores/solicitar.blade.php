@@ -35,26 +35,9 @@
         <label for="exampleInputPassword1">Quebra de Dormência</label>
         <input type="text" name="quebra_dormencia" class="form-control" id="exampleInputPassword1" placeholder="Quebra Dormência">
       </div>
-        <!-- ### IMAGE ### -->
-    {{--<div class="form-group">
-        <div class="panel-heading">
-            <h3 class="panel-title"><i class="icon wb-image"></i> Imagem </h3>
-            <div class="panel-actions">
-                <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
-            </div>
-        </div>
-        <div class="panel-body">
-            @if(isset($semente->imagem))
-                <img src="{{ filter_var($semente->imagem, FILTER_VALIDATE_URL) ? $semente->image : Voyager::image( $semente->image ) }}" style="width:100%" />
-                <input type="hidden" name="imagem" value="{{$semente->imagem}}">
-            @endif
-            <input type="file" id="input-image" name="image">
-        </div>
-    </div>--}}
-      <button type="submit" class="btn btn-primary">Enviar</button>
-
+    <button type="submit" class="btn btn-primary">Enviar</button>
   </form>
-
+  
 
 @endsection
 @section('head')

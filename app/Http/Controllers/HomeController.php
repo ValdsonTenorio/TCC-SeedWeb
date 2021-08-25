@@ -36,6 +36,13 @@ class HomeController extends Controller
         $sementes = Semente::all();
         return view('home', compact('sementes'));
     }
+    public function solicitarPerfilPesquisador()
+    {
+        $user = Auth::user();
+
+        return view('pesquisadores.solicitar');
+    }
+
 }
 
 
