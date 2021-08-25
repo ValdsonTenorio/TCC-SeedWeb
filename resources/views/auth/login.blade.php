@@ -7,7 +7,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="label-txt">E-Mail Address</label>
+                            <label for="email" class="label-txt">Endereço de Email</label>
 
                            
                                 <input id="email" type="email" class="input @error('email')is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -24,7 +24,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="label-txt">{{ __('Password') }}</label>
+                            <label for="password" class="label-txt">Senha</label>
 
                             
                                 <input id="password" type="password" class="input @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
@@ -41,12 +41,12 @@
                         <div class="row">
                             <div class="col-12">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
+                                    Acessar Conta
                                 </button>
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                        Esqueceu sua senha?
                                     </a>
                                 @endif
                             </div>
@@ -55,7 +55,7 @@
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
+                                        Mantenha-me conectado
                                     </label>
                                 </div>
                             </div>
