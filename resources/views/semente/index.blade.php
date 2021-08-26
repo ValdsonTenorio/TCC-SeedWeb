@@ -17,7 +17,7 @@
 	<div class="row w-100">
 		@endif
 		<div class="col-12 col-md text-center">
-			<img class="bd-placeholder-img rounded-circle" width="140" height="140" src="{{ Voyager::image( $semente->imagem ) }}">	
+			<img class="bd-placeholder-img rounded-circle" width="140" height="140" src="{{ Voyager::image( $semente->imagem ) }}">
 
 			<h2>{{ $semente->nome_popular }}</h2>
 			<p>{!! $semente->nome_cientifico !!}</p>
@@ -29,7 +29,7 @@
 	@endforeach
 	<div class="row">
 	<div class="pagination-style">
-		
+
 			<div class="col-md-12">
 				<?php echo $sementes->render(); ?>
 			</div>
