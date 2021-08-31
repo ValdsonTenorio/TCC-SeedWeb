@@ -10,7 +10,7 @@
     </ul>
 @endif
 
-<form action="{{route('semente.update', $semente->id)}}" method="post">
+<form action="{{route('semente.update', $semente->id)}}" enctype="multipart/form-data" method="post">
     @csrf
     <input name="_method" type="hidden" value="PUT">
     <div class="form-group">
@@ -34,15 +34,22 @@
         <label for="exampleInputPassword1">Quebra de Dormência</label>
         <input value="{{$semente->quebra_de_dormencia}}" type="text" name="quebra_de_dormencia" class="form-control" id="exampleInputPassword1" placeholder="Quebra Dormência" value="{{ old('quebra_dormencia') }}">
       </div>
+      <div class="form-group">
+        <div class="panel-heading">
+            <h3 class="panel-title"><i class="icon wb-image"></i> Imagem </h3>
+            <div class="panel-actions">
+                <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
+            </div>
+        </div>
+        <div class="panel-body">
+            @if(isset($semente->imagem))
+                <img src="{{ Voyager::image( $semente->imagem ) }}" height="150" >
+                <input type="hidden" name="imagem" value="{{$semente->imagem}}">
+            @endif
+            <input type="file" id="input-image" name="image">
+        </div>
+    </div>
     <button type="submit" class="btn btn-primary">Enviar</button>
-  </form>
-  <iframe id="form_target" name="form_target" style="display:none"></iframe>
-  <form id="my_form" action="{{ route('voyager.upload') }}" target="form_target" method="post"
-          enctype="multipart/form-data" style="width:0;height:0;overflow:hidden">
-      <input name="image" id="upload_file" type="file"
-               onchange="$('#my_form').submit();this.value='';">
-      <input type="hidden" name="type_slug" id="type_slug" value="{{ $semente->image }}">
-      {{ csrf_field() }}
   </form>
 
 @endsection

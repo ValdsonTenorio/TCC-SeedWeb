@@ -43,7 +43,7 @@
         </div>
         <div class="panel-body">
             @if(isset($semente->imagem))
-                <img src="{{ filter_var($semente->imagem, FILTER_VALIDATE_URL) ? $semente->image : Voyager::image( $semente->image ) }}" style="width:100%" />
+                <img src="{{Voyager::image( $semente->imagem ) }}" height="150" />
                 <input type="hidden" name="imagem" value="{{$semente->imagem}}">
             @endif
             <input type="file" id="input-image" name="image">
