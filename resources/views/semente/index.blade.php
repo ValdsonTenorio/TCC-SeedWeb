@@ -8,7 +8,9 @@
 </div>
 @endif
 <div class="container-fluid bg-light px-4 mt-3">
+	@can('add', new \App\Models\Semente())
 	<a href="{{ route('semente.create') }}" class="mt-3 btn btn-primary">Cadastrar Semente</a>
+	@endcan
 	<hr>
 
 	<!-- Three columns of text below the carousel -->
