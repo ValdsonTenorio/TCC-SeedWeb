@@ -10,7 +10,7 @@
     </ul>
 @endif
 
-<form action="{{route('semente.store')}}" method="post">
+<form action="{{route('semente.store')}}" enctype="multipart/form-data" method="post">
     @csrf
     <div class="form-group">
       <label for="exampleInputEmail1">Nome Popular da Semente</label>
@@ -34,7 +34,7 @@
         <input type="text" name="quebra_dormencia" class="form-control" id="exampleInputPassword1" placeholder="Quebra Dormência" value="{{ old('quebra_dormencia') }}">
       </div>
         <!-- ### IMAGE ### -->
-    {{--<div class="form-group">
+      <div class="form-group">
         <div class="panel-heading">
             <h3 class="panel-title"><i class="icon wb-image"></i> Imagem </h3>
             <div class="panel-actions">
@@ -48,7 +48,7 @@
             @endif
             <input type="file" id="input-image" name="image">
         </div>
-    </div>--}}
+    </div>
       <button type="submit" class="btn btn-primary">Enviar</button>
 
   </form>
