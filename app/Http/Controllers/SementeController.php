@@ -57,7 +57,7 @@ class SementeController extends Controller
             $semente->especie = $request->especie;
             $semente->genero = $request->genero;
             $semente->quebra_de_dormencia = $request->quebra_de_dormencia;
-            //$semente->imagem = $this->upload($request);
+            $semente->imagem = $this->upload($request->file('image'));
            $semente->save();
             return redirect()->route('semente.index');
         } else {
@@ -111,6 +111,7 @@ class SementeController extends Controller
             $semente->especie = $request->especie;
             $semente->genero = $request->genero;
             $semente->quebra_de_dormencia = $request->quebra_de_dormencia;
+            $semente->imagem = $this->upload($request->file('image'));
             $semente->save();
             return redirect()->route('semente.index');
         } else {
@@ -133,15 +134,14 @@ class SementeController extends Controller
             return redirect()->route('semente.index');
         }
     }
-    public function upload(Request $request)
+    public function upload($file)
     {
         $fullFilename = null;
         $resizeWidth = 1800;
         $resizeHeight = null;
         $slug = "sementes";
 
-        $file = $request->file('image');
-
+        if(isset($file)){
         $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->firstOrFail();
 
         $path = $slug.'/'.date('F').date('Y').'/';
@@ -182,6 +182,8 @@ class SementeController extends Controller
 
         // echo out script that TinyMCE can handle and update the image in the editor
         return $fullFilename;
+        }
+        return '';
     }
 
     public function search(Request $request)
