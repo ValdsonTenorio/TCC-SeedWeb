@@ -7,9 +7,20 @@
 	{{ Session::get('mensagem') }}
 </div>
 @endif
+
 <div class="container-fluid bg-light px-4 mt-3">
-	<a href="{{ route('semente.create') }}" class="mt-3 btn btn-primary">Cadastrar Semente</a>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <a href="{{ route('semente.create') }}" class="mt-3 btn btn-primary ">Cadastrar Semente</a>
+          <form class="d-flex" action="{{ route('semente.search') }}" method="get">
+            @csrf
+            <input class="form-control me-2" type="search" aria-label="Search" type="text" name="search" placeholder="Filtrar">
+            <button class="btn btn-outline-success" type="submit">Filtrar</button>
+          </form>
+        </div>
+      </nav>
 	<hr>
+
 
 	<!-- Three columns of text below the carousel -->
 	@foreach($sementes as $key => $semente)

@@ -183,4 +183,16 @@ class SementeController extends Controller
         // echo out script that TinyMCE can handle and update the image in the editor
         return $fullFilename;
     }
+
+    public function search(Request $request)
+    {
+        if (empty($request->search)){
+          $sementes = Semente::paginate();
+          return view('semente.index', compact('sementes'));
+        } else {
+        $sementes = Semente::where('nome_popular', $request->search)->paginate();
+        return view('semente.index', compact('sementes'));
+        }
+
+    }
 }

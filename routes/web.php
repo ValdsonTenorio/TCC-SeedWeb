@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 /*Route::get('/', function () {
     $sementes = App\Models\Semente::paginate(4);
     return view('welcome', compact('sementes'));
-    
+
 });*/
 Route::get('/', [App\Http\Controllers\SementeController::class, 'index'])->name('semente.index');
 
@@ -27,6 +27,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 //Auth::routes();
 
+Route::get('/semente/search', [App\Http\Controllers\SementeController::class, 'search'])->name('semente.search');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/semente', [App\Http\Controllers\SementeController::class, 'index'])->name('semente.index');
 Route::get('/semente/create', [App\Http\Controllers\SementeController::class, 'create'])->name('semente.create');
