@@ -19,7 +19,7 @@
         </ul>
 
         <!-- Right Side Of Navbar -->
-        <ul class="navbar-nav">
+        <ul class="navbar-nav menu-login" >
             <!-- Authentication Links -->
             @guest
                 @if (Route::has('login'))

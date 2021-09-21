@@ -15,6 +15,14 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+        .menu-login{
+            width:235px;
+            display:flex;
+            justify-content:end;
+
+        }
+    </style>
     @yield('head')
 
 </head>
