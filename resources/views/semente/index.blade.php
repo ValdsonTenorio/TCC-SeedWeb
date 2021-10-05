@@ -11,7 +11,15 @@
 <div class="container-fluid bg-light px-4 mt-3">
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-          <a href="{{ route('semente.create') }}" class="mt-3 btn btn-primary ">Cadastrar Semente</a>
+		@auth
+		<div class="acoes">
+		  @can('add', new \App\Models\Semente)
+			  <a href="{{ route('semente.create') }}" class="mt-3 btn btn-primary ">Cadastrar Semente</a>
+			  @else
+			  <a href="{{ route('pesquisador.permissao') }}" class="mt-3 btn btn-primary ">Solicitar permissão gerenciar sementes</a>
+			  @endcan
+			</div>
+			@endauth
           <form class="d-flex" action="{{ route('semente.search') }}" method="get">
             @csrf
             <input class="form-control me-2" type="search" aria-label="Search" type="text" name="search" placeholder="Filtrar">

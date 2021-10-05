@@ -29,6 +29,8 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::get('/semente/search', [App\Http\Controllers\SementeController::class, 'search'])->name('semente.search');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/pesquisador/solicitarpermissao', [App\Http\Controllers\HomeController::class, 'solicitarPerfilPesquisador'])->name('pesquisador.permissao');
+Route::post('/pesquisador/store', [App\Http\Controllers\HomeController::class, 'storepesquisador'])->name('pesquisador.store');
 Route::get('/semente', [App\Http\Controllers\SementeController::class, 'index'])->name('semente.index');
 Route::get('/semente/create', [App\Http\Controllers\SementeController::class, 'create'])->name('semente.create');
 Route::post('/semente/store', [App\Http\Controllers\SementeController::class, 'store'])->name('semente.store');

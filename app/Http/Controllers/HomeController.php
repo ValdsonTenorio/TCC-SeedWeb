@@ -29,7 +29,7 @@ class HomeController extends Controller
         if($user->role_id == 1){
             return redirect()->route('voyager.dashboard');
         }
-        return view('pesquisadores.home');
+        return redirect()->route('semente.index');
     }
     public function sementes()
     {
@@ -39,8 +39,12 @@ class HomeController extends Controller
     public function solicitarPerfilPesquisador()
     {
         $user = Auth::user();
-
+        
         return view('pesquisadores.solicitar');
+    }
+    public function storepesquisador(Request $request){
+        dd($request);
+
     }
 
 }
