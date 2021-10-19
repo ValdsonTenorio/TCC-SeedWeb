@@ -8,5 +8,7 @@ return [
         'posts',
         'categories',
         'sementes',
+        'pesquisadores',
+
     ],
 ];

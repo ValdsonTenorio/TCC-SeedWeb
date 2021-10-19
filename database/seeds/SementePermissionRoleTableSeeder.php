@@ -21,5 +21,8 @@ class SementePermissionRoleTableSeeder extends Seeder
         ->get();
 
         $role->permissions()->saveMany($permissions);
+        $role = Role::where('name', 'pesquisador')->firstOrFail();
+
+        $role->permissions()->saveMany($permissions);
     }
 }

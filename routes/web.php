@@ -27,10 +27,19 @@ Route::group(['prefix' => 'admin'], function () {
 
 //Auth::routes();
 
-Route::get('/semente/search', [App\Http\Controllers\SementeController::class, 'search'])->name('semente.search');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/pesquisador/solicitarpermissao', [App\Http\Controllers\HomeController::class, 'solicitarPerfilPesquisador'])->name('pesquisador.permissao');
-Route::post('/pesquisador/store', [App\Http\Controllers\HomeController::class, 'storepesquisador'])->name('pesquisador.store');
+Route::get('/pesquisador/solicitarpermissao', [App\Http\Controllers\PesquisadorController::class, 'create'])->name('pesquisador.permissao');
+Route::get('/pesquisador/search', [App\Http\Controllers\PesquisadorController::class, 'search'])->name('pesquisador.search');
+Route::get('/pesquisador', [App\Http\Controllers\PesquisadorController::class, 'index'])->name('pesquisador.index');
+Route::get('/pesquisador/create', [App\Http\Controllers\PesquisadorController::class, 'create'])->name('pesquisador.create');
+Route::post('/pesquisador/store', [App\Http\Controllers\PesquisadorController::class, 'store'])->name('pesquisador.store');
+Route::get('/pesquisador/{id}', [App\Http\Controllers\PesquisadorController::class, 'show'])->name('pesquisador.show');
+Route::get('/pesquisador/edit/{id}', [App\Http\Controllers\PesquisadorController::class, 'edit'])->name('pesquisador.edit');
+Route::put('/pesquisador/{id}', [App\Http\Controllers\PesquisadorController::class, 'update'])->name('pesquisador.update');
+Route::delete('/pesquisador/{id}', [App\Http\Controllers\PesquisadorController::class, 'destroy'])->name('pesquisador.destroy');
+
+Route::get('/semente/search', [App\Http\Controllers\SementeController::class, 'search'])->name('semente.search');
 Route::get('/semente', [App\Http\Controllers\SementeController::class, 'index'])->name('semente.index');
 Route::get('/semente/create', [App\Http\Controllers\SementeController::class, 'create'])->name('semente.create');
 Route::post('/semente/store', [App\Http\Controllers\SementeController::class, 'store'])->name('semente.store');
