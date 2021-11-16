@@ -108,4 +108,27 @@ class PesquisadorController extends Controller
         }
 
     }
+    public function aprovar(Request $request)
+    {
+
+        $pesquisador = Pesquisador::find($request->pesquisador_id);
+        $pesquisador->situacao = 1;
+        $pesquisador->save();
+//falta atribuir permissões ao usario
+
+        return redirect()->route('pesquisador.index');
+
+    }
+    public function negar(Request $request)
+    {
+
+        $pesquisador = Pesquisador::find($request->pesquisador_id);
+        $pesquisador->situacao = 2;
+        $pesquisador->justificativa = $request->justificativa;
+        $pesquisador->save();
+
+
+        return redirect()->route('pesquisador.index');
+
+    }
 }
