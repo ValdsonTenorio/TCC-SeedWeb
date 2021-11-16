@@ -34,6 +34,7 @@ Route::get('/pesquisador/search', [App\Http\Controllers\PesquisadorController::c
 Route::get('/pesquisador', [App\Http\Controllers\PesquisadorController::class, 'index'])->name('pesquisador.index');
 Route::get('/pesquisador/create', [App\Http\Controllers\PesquisadorController::class, 'create'])->name('pesquisador.create');
 Route::post('/pesquisador/store', [App\Http\Controllers\PesquisadorController::class, 'store'])->name('pesquisador.store');
+Route::get('/pesquisador/solicitacoes', [App\Http\Controllers\PesquisadorController::class, 'solicitacoes'])->name('pesquisador.solicitacoes');
 Route::get('/pesquisador/{id}', [App\Http\Controllers\PesquisadorController::class, 'show'])->name('pesquisador.show');
 Route::get('/pesquisador/edit/{id}', [App\Http\Controllers\PesquisadorController::class, 'edit'])->name('pesquisador.edit');
 Route::put('/pesquisador/{id}', [App\Http\Controllers\PesquisadorController::class, 'update'])->name('pesquisador.update');
