@@ -108,7 +108,7 @@ class PesquisadorController extends Controller
         }
 
     }
-<<<<<<< HEAD
+
     public function aprovar(Request $request)
     {
 
@@ -132,7 +132,7 @@ class PesquisadorController extends Controller
         return redirect()->route('pesquisador.index');
 
     }
-=======
+
     public function solicitacoes(Request $request)
     {
         if (Auth::check() === true ) {
@@ -144,5 +144,4 @@ class PesquisadorController extends Controller
         }
     }
 
->>>>>>> a16b9501641c5ac51949866be908f0512e7cc9be
 }
