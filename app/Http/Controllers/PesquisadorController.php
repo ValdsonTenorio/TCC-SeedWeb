@@ -108,6 +108,7 @@ class PesquisadorController extends Controller
         }
 
     }
+<<<<<<< HEAD
     public function aprovar(Request $request)
     {
 
@@ -131,4 +132,17 @@ class PesquisadorController extends Controller
         return redirect()->route('pesquisador.index');
 
     }
+=======
+    public function solicitacoes(Request $request)
+    {
+        if (Auth::check() === true ) {
+            $pesquisadores = Pesquisador::paginate();
+            return view('pesquisadores.solicitacoes', compact('pesquisadores'));
+        } else {
+            $request->session()->flash('mensagem', 'Você não possui permissão para isso');
+            return redirect()->route('pesquisador.index');
+        }
+    }
+
+>>>>>>> a16b9501641c5ac51949866be908f0512e7cc9be
 }
