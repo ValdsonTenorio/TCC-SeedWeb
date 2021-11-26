@@ -12,7 +12,6 @@
       <p><strong>Nome Popular: </strong>{!! $semente->nome_popular!!}</p>
       <p><strong>Especie: </strong>{!! $semente->especie!!}</p>
       <p><strong>Genero: </strong>{!! $semente->genero!!}</p>
-      <p><strong>Tipo de Dormência: </strong>{!! $semente->tipo_de_dormencia!!}</p>
       <p><strong>Quebra De Dormencia: </strong>{!! $semente->quebra_de_dormencia!!}</p>
       </div>
       <div class="modal-footer">
