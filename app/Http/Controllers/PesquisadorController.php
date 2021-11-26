@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Pesquisador;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use PhpParser\Node\Expr\New_;
+
 class PesquisadorController extends Controller
 {
     /**
@@ -14,8 +16,13 @@ class PesquisadorController extends Controller
      */
     public function index()
     {
-        $pesquisadores = Pesquisador::paginate();
-        return view('pesquisadores.index', compact('pesquisadores'));
+        if (Auth::user()->can('browse', new Pesquisador)){
+            $pesquisadores = Pesquisador::paginate();
+            return view('pesquisadores.index', compact('pesquisadores'));
+          } else {
+          $pesquisadores = Pesquisador::where('usuario_id', Auth::user()->id)->paginate();
+          return view('pesquisadores.index', compact('pesquisadores'));
+          }
 
     }
 
@@ -111,14 +118,15 @@ class PesquisadorController extends Controller
 
     public function aprovar(Request $request)
     {
-
         $pesquisador = Pesquisador::find($request->pesquisador_id);
         $pesquisador->situacao = 1;
         $pesquisador->save();
-//falta atribuir permissões ao usario
-
+        if (Auth::user()->can('edit', new Pesquisador)){
+            $pesquisadores = Pesquisador::paginate();
+            return view('pesquisadores.avaliar', compact('pesquisadores'));
+          }else{
         return redirect()->route('pesquisador.index');
-
+        }
     }
     public function negar(Request $request)
     {
@@ -127,10 +135,13 @@ class PesquisadorController extends Controller
         $pesquisador->situacao = 2;
         $pesquisador->justificativa = $request->justificativa;
         $pesquisador->save();
-
+        if (Auth::user()->can('edit', new Pesquisador)){
+            $pesquisadores = Pesquisador::paginate();
+            return view('pesquisadores.avaliar', compact('pesquisadores'));
+          }else{
 
         return redirect()->route('pesquisador.index');
-
+          }
     }
 
     public function solicitacoes(Request $request)
@@ -142,6 +153,18 @@ class PesquisadorController extends Controller
             $request->session()->flash('mensagem', 'Você não possui permissão para isso');
             return redirect()->route('pesquisador.index');
         }
+    }
+    public function avaliar()
+    {
+        //if (Auth::user()->can('edit', new Pesquisador)){
+            $pesquisadores = Pesquisador::paginate();
+            return view('pesquisadores.avaliar', compact('pesquisadores'));
+          /*} else {
+          $pesquisadores = Pesquisador::where('usuario_id', Auth::user()->id)->paginate();
+          return view('pesquisadores.index', compact('pesquisadores'));
+           }
+           */
+
     }
 
 }

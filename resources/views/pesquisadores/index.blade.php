@@ -37,8 +37,8 @@
 			<h2>{{ $pesquisador->email_institucional }}</h2>
 			<p>{!! $pesquisador->curriculo_lattes !!}</p>
             <h2> {!! $pesquisador->situacao() !!} </h2>
-			<p><a class="btn btn-primary" href="#" data-toggle="modal" data-target="#{{ $pesquisador->id }}" onclick="mostrarmodal({{$pesquisador->id}})">Mais Detalhes »</a></p>
             @can('edit', new \App\Models\Pesquisador)
+            <p><a class="btn btn-primary" href="#" data-toggle="modal" data-target="#{{ $pesquisador->id }}" onclick="mostrarmodal({{$pesquisador->id}})">Mais Detalhes »</a></p>
             <form action="{{route('pesquisador.aprovar')}}" enctype="multipart/form-data" method="post">
                 @csrf
                 <input type="hidden" name="pesquisador_id" value="{{ $pesquisador->id }}">

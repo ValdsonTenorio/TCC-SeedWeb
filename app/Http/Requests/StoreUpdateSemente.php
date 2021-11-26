@@ -24,11 +24,11 @@ class StoreUpdateSemente extends FormRequest
     public function rules()
     {
         return [
-            'nome_popular' => ['required', 'min:5', 'max:10000'],
-            'nome_cientifico' => ['required', 'min:5', 'max:10000'],
-            'especie' => ['required', 'min:5', 'max:10000'],
-            'genero' => ['required', 'min:5', 'max:10000'],
-            'quebra_dormencia' => ['required', 'min:5', 'max:10000'],
+            'nome_popular' => ['required', 'min:3', 'max:10000'],
+            'nome_cientifico' => ['required', 'min:3', 'max:10000'],
+            'especie' => ['required', 'min:3', 'max:10000'],
+            'genero' => ['required', 'min:3', 'max:10000'],
+            'quebra_de_dormencia' => ['required', 'min:3', 'max:10000'],
         ];
     }
 }

@@ -30,8 +30,12 @@
         <input type="text" name="genero" class="form-control" id="exampleInputPassword1" placeholder="Genêro" value="{{ old('genero') }}">
       </div>
       <div class="form-group">
+        <label for="exampleInputPassword1">Tipo de Dormência</label>
+        <input type="text" name="tipo_de_dormencia" class="form-control" id="exampleInputPassword1" placeholder="tipo_de_dormencia" value="{{ old('tipo_de_dormencia') }}">
+      </div>
+      <div class="form-group">
         <label for="exampleInputPassword1">Quebra de Dormência</label>
-        <input type="text" name="quebra_dormencia" class="form-control" id="exampleInputPassword1" placeholder="Quebra Dormência" value="{{ old('quebra_dormencia') }}">
+        <input type="text" name="quebra_de_dormencia" class="form-control" id="exampleInputPassword1" placeholder="Quebra Dormência" value="{{ old('quebra_de_dormencia') }}">
       </div>
         <!-- ### IMAGE ### -->
       <div class="form-group">

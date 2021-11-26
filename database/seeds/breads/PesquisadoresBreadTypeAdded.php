@@ -43,9 +43,9 @@ class PesquisadoresBreadTypeAdded extends Seeder
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null}',
                 'description' => NULL,
                 'server_side' => 0,
-                'updated_at' => '2021-11-16 21:28:54',
-                'created_at' => '2021-11-16 21:28:54',
-                'id' => 9,
+                'updated_at' => '2021-11-23 21:55:58',
+                'created_at' => '2021-11-23 21:55:58',
+                'id' => 8,
             ));
 
             

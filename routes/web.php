@@ -33,6 +33,7 @@ Route::get('/pesquisador/solicitarpermissao', [App\Http\Controllers\PesquisadorC
 Route::get('/pesquisador/search', [App\Http\Controllers\PesquisadorController::class, 'search'])->name('pesquisador.search');
 Route::get('/pesquisador', [App\Http\Controllers\PesquisadorController::class, 'index'])->name('pesquisador.index');
 Route::get('/pesquisador/create', [App\Http\Controllers\PesquisadorController::class, 'create'])->name('pesquisador.create');
+Route::get('/pesquisador/avaliar', [App\Http\Controllers\PesquisadorController::class, 'avaliar'])->name('pesquisador.avaliar');
 Route::post('/pesquisador/store', [App\Http\Controllers\PesquisadorController::class, 'store'])->name('pesquisador.store');
 Route::post('/pesquisador/aprovar', [App\Http\Controllers\PesquisadorController::class, 'aprovar'])->name('pesquisador.aprovar');
 Route::put('/pesquisador/negar', [App\Http\Controllers\PesquisadorController::class, 'negar'])->name('pesquisador.negar');

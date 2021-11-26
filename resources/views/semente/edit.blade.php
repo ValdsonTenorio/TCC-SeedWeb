@@ -31,6 +31,10 @@
         <input value="{{$semente->genero}}" type="text" name="genero" class="form-control" id="exampleInputPassword1" placeholder="Genêro" value="{{ old('genero') }}">
       </div>
       <div class="form-group">
+        <label for="exampleInputPassword1">Tipo de Dormência</label>
+        <input value="{{$semente->tipo_de_dormencia}}" type="text" name="tipo_de_dormencia" class="form-control" id="exampleInputPassword1" placeholder="Tipo de Dormência" value="{{ old('tipo_de_dormencia') }}">
+      </div>
+      <div class="form-group">
         <label for="exampleInputPassword1">Quebra de Dormência</label>
         <input value="{{$semente->quebra_de_dormencia}}" type="text" name="quebra_de_dormencia" class="form-control" id="exampleInputPassword1" placeholder="Quebra Dormência" value="{{ old('quebra_dormencia') }}">
       </div>
