@@ -20,6 +20,7 @@ class CreateSementesTable extends Migration
             $table->text('nome_cientifico')->nullable();
             $table->text('especie')->nullable();
             $table->text('genero')->nullable();
+            $table->text('causa_da_dormencia')->nullable();
             $table->text('quebra_de_dormencia')->nullable();
             $table->string('imagem')->nullable();
             $table->text('descricao')->nullable();

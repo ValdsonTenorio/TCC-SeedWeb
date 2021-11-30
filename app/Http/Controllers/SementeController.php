@@ -56,7 +56,7 @@ class SementeController extends Controller
             $semente->nome_cientifico = $request->nome_cientifico;
             $semente->especie = $request->especie;
             $semente->genero = $request->genero;
-            $semente->causa = $request->causa;
+            $semente->causa_da_dormencia = $request->causa_da_dormencia;
             $semente->quebra_de_dormencia = $request->quebra_de_dormencia;
             $semente->imagem = $this->upload($request->file('image'));
            $semente->save();
@@ -111,7 +111,7 @@ class SementeController extends Controller
             $semente->nome_cientifico = $request->nome_cientifico;
             $semente->especie = $request->especie;
             $semente->genero = $request->genero;
-            $semente->causa = $request->causa;
+            $semente->causa_da_dormencia = $request->causa_da_dormencia;
             $semente->quebra_de_dormencia = $request->quebra_de_dormencia;
             $semente->imagem = $this->upload($request->file('image'));
             $semente->save();

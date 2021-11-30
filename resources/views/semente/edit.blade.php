@@ -32,7 +32,7 @@
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Causa da Dormência</label>
-        <input value="{{$semente->causa}}" type="text" name="causa" class="form-control" id="exampleInputPassword1" placeholder="Causa" value="{{ old('causa') }}">
+        <input value="{{$semente->causa_da_dormencia}}" type="text" name="causa_da_dormencia" class="form-control" id="exampleInputPassword1" placeholder="causa da dormencia" value="{{ old('causa_da_dormencia') }}">
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Quebra de Dormência</label>

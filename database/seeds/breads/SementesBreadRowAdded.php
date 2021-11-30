@@ -24,7 +24,7 @@ class SementesBreadRowAdded extends Seeder
                 array (
                     'data_type_id' => $dataType->id,
                     'field' => 'id',
-                    'type' => 'number',
+                    'type' => 'text',
                     'display_name' => 'Id',
                     'required' => 1,
                     'browse' => 0,
@@ -44,9 +44,9 @@ class SementesBreadRowAdded extends Seeder
                     'required' => 0,
                     'browse' => 1,
                     'read' => 1,
-                    'edit' => 1,
+                    'edit' => 0,
                     'add' => 0,
-                    'delete' => 1,
+                    'delete' => 0,
                     'details' => '{}',
                     'order' => 2,
                 ),
@@ -152,7 +152,7 @@ class SementesBreadRowAdded extends Seeder
                     'edit' => 1,
                     'add' => 1,
                     'delete' => 1,
-                    'details' => '{"resize":{"width":"1000","height":"null"},"quality":"70%","upsize":true,"thumbnails":[{"name":"medium","scale":"50%"},{"name":"small","scale":"25%"},{"name":"cropped","crop":{"width":"300","height":"250"}}]}',
+                    'details' => '{}',
                     'order' => 9,
                 ),
                 9 => 
@@ -169,6 +169,21 @@ class SementesBreadRowAdded extends Seeder
                     'delete' => 1,
                     'details' => '{}',
                     'order' => 10,
+                ),
+                10 => 
+                array (
+                    'data_type_id' => $dataType->id,
+                    'field' => 'causa_da_dormencia',
+                    'type' => 'text',
+                    'display_name' => 'Causa Da Dormencia',
+                    'required' => 1,
+                    'browse' => 1,
+                    'read' => 1,
+                    'edit' => 1,
+                    'add' => 1,
+                    'delete' => 1,
+                    'details' => '{}',
+                    'order' => 11,
                 ),
             ));
         } catch(Exception $e) {
