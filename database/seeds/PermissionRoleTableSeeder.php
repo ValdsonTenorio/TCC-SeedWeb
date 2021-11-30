@@ -20,5 +20,7 @@ class PermissionRoleTableSeeder extends Seeder
         $role->permissions()->sync(
             $permissions->pluck('id')->all()
         );
+
+
     }
 }

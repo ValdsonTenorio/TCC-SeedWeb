@@ -6,6 +6,8 @@ use App\Models\Pesquisador;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use PhpParser\Node\Expr\New_;
+use App\Models\User;
+use TCG\Voyager\Models\Role;
 
 class PesquisadorController extends Controller
 {
@@ -121,6 +123,10 @@ class PesquisadorController extends Controller
         $pesquisador = Pesquisador::find($request->pesquisador_id);
         $pesquisador->situacao = 1;
         $pesquisador->save();
+        $usuario = User::find($pesquisador->usuario_id);
+        $role = Role::where('name', 'pesquisador')->firstOrFail();
+        $usuario->role_id = $role->id;
+        $usuario->save();
         if (Auth::user()->can('edit', new Pesquisador)){
             $pesquisadores = Pesquisador::paginate();
             return view('pesquisadores.avaliar', compact('pesquisadores'));
