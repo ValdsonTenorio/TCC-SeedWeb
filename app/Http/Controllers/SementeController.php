@@ -113,7 +113,9 @@ class SementeController extends Controller
             $semente->genero = $request->genero;
             $semente->causa_da_dormencia = $request->causa_da_dormencia;
             $semente->quebra_de_dormencia = $request->quebra_de_dormencia;
-            $semente->imagem = $this->upload($request->file('image'));
+            if (null !==$request->file('image')){
+                $semente->imagem = $this->upload($request->file('image'));
+            }
             $semente->save();
             return redirect()->route('semente.index');
         } else {
