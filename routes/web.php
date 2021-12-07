@@ -33,7 +33,6 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::get('/semente/search', [App\Http\Controllers\SementeController::class, 'search'])->name('semente.search');
 Route::get('/semente', [App\Http\Controllers\SementeController::class, 'index'])->name('semente.index');
-Route::get('/semente/{id}', [App\Http\Controllers\SementeController::class, 'show'])->name('semente.show');
 
 
 
@@ -65,3 +64,4 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 });
 
+Route::get('/semente/{id}', [App\Http\Controllers\SementeController::class, 'show'])->name('semente.show');
